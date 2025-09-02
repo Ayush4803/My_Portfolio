@@ -15,20 +15,7 @@ A personal portfolio website built using **React**, **Vite**, and **Tailwind CSS
 - **Frontend:** React + Vite
 - **Styling:** Tailwind CSS
 - **Routing:** React Router DOM
-- **Deployment:** (e.g., Vercel / Netlify / GitHub Pages)
+- **Deployment:**  Netlify 
 
-## 📂 Folder Structure
-
-portfolio/
-│── public/ # Static assets
-│── src/
-│ ├── components/ # Reusable UI components
-│ ├── pages/ # Individual pages (Home, About, Contact, etc.)
-│ ├── App.jsx # Main app component
-│ ├── main.jsx # Entry point
-│── package.json
-│── tailwind.config.js
-│── vite.config.js
-│── README.md
-
+#
 
