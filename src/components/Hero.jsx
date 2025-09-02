@@ -1,7 +1,23 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Hero() {
+  const roles = [
+    "a Frontend Developer",
+    "a Competitive Programmer",
+    "an AI/ML Enthusiast",
+    "a Problem Solver",
+  ];
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % roles.length);
+    }, 2500); // change every 2.5 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="home"
@@ -12,9 +28,21 @@ export default function Hero() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-4xl md:text-5xl font-extrabold leading-tight"
+          className="text-4xl md:text-5xl font-extrabold leading-tight flex flex-wrap gap-2"
         >
-          Hi, I’m Ayush — a Frontend Developer.
+          Hi, I’m Ayush —{" "}
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={roles[index]}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="text-primary"
+            >
+              {roles[index]}
+            </motion.span>
+          </AnimatePresence>
         </motion.h1>
 
         <motion.p
@@ -28,6 +56,7 @@ export default function Hero() {
           in order to learn and grow along with the organization.
         </motion.p>
 
+        {/* Buttons */}
         <div className="flex gap-4">
           <a
             href="#projects"
@@ -43,6 +72,7 @@ export default function Hero() {
           </a>
         </div>
 
+        {/* Tech Stack */}
         <div className="mt-6 text-sm text-gray-400 space-y-2">
           <div>
             <strong>Tech:</strong> React • Tailwind • Javascript • SQL • C++
@@ -64,7 +94,7 @@ export default function Hero() {
             >
               LeetCode
             </a>
-             <a
+            <a
               href="https://www.linkedin.com/in/ayush-kumar-997818282"
               target="_blank"
               rel="noreferrer"
@@ -75,23 +105,21 @@ export default function Hero() {
           </div>
         </div>
 
-
-
-
-         {/* Achievements Section */}
+        {/* Achievements */}
         <div className="mt-6">
           <h3 className="text-lg font-semibold text-white">Achievements</h3>
           <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1">
-            <li>Achieved peak rating of <strong>1605</strong> on CodeChef (3-star coder).</li>
-            <li>Secured <strong>Global Rank 35</strong> at CodeChef Starters 151 Div3 Round.</li>
+            <li>
+              Achieved peak rating of <strong>1605</strong> on CodeChef (3-star coder).
+            </li>
+            <li>
+              Secured <strong>Global Rank 35</strong> at CodeChef Starters 151 Div3 Round.
+            </li>
           </ul>
         </div>
-      
       </div>
 
-      
-
-      {/* Static Image instead of 3D Canvas */}
+      {/* Image */}
       <div className="h-96 md:h-[520px] w-full rounded-3xl overflow-hidden border border-gray-800">
         <img
           src="/MY_PIC.jpg"
@@ -100,5 +128,5 @@ export default function Hero() {
         />
       </div>
     </section>
-  )
+  );
 }

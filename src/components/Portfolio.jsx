@@ -15,6 +15,11 @@ const projects = [
     title: 'Weather App',
     desc: 'Responsive weather app built with HTML, CSS, and JavaScript using OpenWeatherMap API.',
     link: 'https://harmonious-melomakarona-770397.netlify.app/'
+  },
+  {
+    title:'Netflix-Gpt',
+    desc:'A Netflix Clone built with React, Tailwind CSS, Firebase, TMDB API, and OpenAI GPT — featuring multilingual AI-powered movie search, recommendations, and authentication.',
+    link:'https://polite-marshmallow-0bd4ec.netlify.app/'
   }
 ]
 
