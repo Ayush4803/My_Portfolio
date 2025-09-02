@@ -15,7 +15,7 @@ A personal portfolio website built using **React**, **Vite**, and **Tailwind CSS
 - **Frontend:** React + Vite
 - **Styling:** Tailwind CSS
 - **Routing:** React Router DOM
-- **Deployment:**  Netlify 
+- **Deployment:** VERCEL
 
 #
 
